@@ -1,0 +1,35 @@
+<h1>MY Inventory</h1>
+
+<div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>itemNo</th>
+                <th>name</th>
+                <th>amount</th>
+                <th>inventoryCode</th>
+                <th></th>
+                <th></th>
+                <th>update</th>
+                <th>delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- for(Todo todo: todos) -->
+            <tr *ngFor="let item of stock">
+                <td>{{item.itemNo}}</td>
+                <td>{{item.name}}</td>
+                <td>{{item.amount}}</td>
+                <td>{{item.inventoryCode}}</td>
+                <td><button (click)="increaseItem(item.itemNo)" class="btn btn-success">+</button></td>
+                <td><button (click)="decreaseItem(item.itemNo)" class="btn btn-success">-</button></td>
+                <td><button (click)="updateItem(item.itemNo)" class="btn btn-success">Update</button></td>
+                <td><button (click)="deleteItem(item.itemNo)" class="btn btn-warning">Delete</button></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="row">
+        <button (click)="addItem()" class="btn btn-success">Add</button>
+    </div>
+</div>
